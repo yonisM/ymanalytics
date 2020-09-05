@@ -1,0 +1,136 @@
+
+ {% extends "base2.html" %}   
+	
+	
+{% block content%}
+	
+
+    
+        
+    <h1 style="text-align:center"> Main Dashboard</h1>
+
+
+<div class ="row">
+    <div class = "col-md-6">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class = "col-md-6">
+        <canvas id="myChart1"></canvas>
+    </div>
+</div>
+<div class ="row">
+    <div class = "col-md-6">
+        <canvas id="myChart3"></canvas>
+    </div>
+    <div class = "col-md-6">
+        <canvas id="myChart4"></canvas>
+    </div>
+</div>
+    
+    
+
+
+
+<script>
+//chart 1
+    let myChart = document.getElementById('myChart').getContext('2d');
+    
+    let massPopCharts = new Chart(myChart, {
+        type:'bar', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            datasets:[{
+                label: 'Population',
+                data:[694583,8399000,8982000,3769000,2148000],
+                //backgroundColor:'green',
+                backgroundColor:['green','blue','yellow','brown','pink'],
+                    }]
+        },
+        options:{
+            title:{display:true, text: 'Population of various cities',fontSize:25},
+            legend:{display:false}
+        },
+        
+        layout:{ padding:{left:10}
+            }
+        
+    });
+    
+//chart 2 
+        let myChart1 = document.getElementById('myChart1').getContext('2d');
+    
+    let massPopCharts1 = new Chart(myChart1, {
+        type:'line', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            datasets:[{
+                label: 'Population',
+                data:[694583,8399000,8982000,3769000,2148000],
+                //backgroundColor:'green',
+                backgroundColor:['green','blue','yellow','brown','pink'],
+                    }]
+        },
+        options:{
+            title:{display:true, text: 'Population of various cities',fontSize:25},
+            legend:{display:false}
+        },
+        
+        layout:{ padding:{left:10}
+            }
+    });
+    
+//chart 3
+    let myChart3 = document.getElementById('myChart3').getContext('2d');
+    
+    let massPopCharts3 = new Chart(myChart3, {
+        type:'bar', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            datasets:[{
+                label: 'Population',
+                data:[694583,8399000,8982000,3769000,2148000],
+                //backgroundColor:'green',
+                backgroundColor:['green','blue','yellow','brown','pink'],
+                    }]
+        },
+        options:{
+            title:{display:true, text: 'Population of various cities',fontSize:25},
+            legend:{display:false}
+        },
+        
+        layout:{ padding:{left:10}
+            }
+    });
+    
+//chart 4 
+        let myChart4 = document.getElementById('myChart4').getContext('2d');
+    
+    let massPopCharts4 = new Chart(myChart4, {
+        type:'pie', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            datasets:[{
+                label: 'Population',
+                data:[694583,8399000,8982000,3769000,2148000],
+                //backgroundColor:'green',
+                backgroundColor:['green','blue','yellow','brown','pink'],
+                    }]
+        },
+        options:{
+            title:{display:true, text: 'Population of various cities',fontSize:25},
+            legend:{display:false}
+        },
+        
+        layout:{ padding:{left:10}
+            }
+    }); 
+    
+    
+    
+    
+ 
+
+</script>
+
+
+{% endblock %}
