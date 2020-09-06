@@ -1,4 +1,10 @@
- #wrapper {
+.row {
+    margin-top:25px;
+} 
+
+
+
+#wrapper {
     overflow-x: hidden;
  }
 

@@ -6,11 +6,11 @@
 	
 
     
-        
-    <h1 style="text-align:center"> Main Dashboard</h1>
+<div class = "container">
+    <h1 style="text-align:center"> DragonPass Main Dashboard</h1>
 
 
-<div class ="row">
+<div class ="row" style="margin-top:40px">
     <div class = "col-md-6">
         <canvas id="myChart"></canvas>
     </div>
@@ -18,16 +18,85 @@
         <canvas id="myChart1"></canvas>
     </div>
 </div>
-<div class ="row">
-    <div class = "col-md-6">
-        <canvas id="myChart3"></canvas>
+
+    
+    
+    
+    
+    
+<div class ="row" style="margin-top:40px">
+    
+    <h3 style = "text-align: center"> Top Lounges </h3>
+    
+    
+    <div class = "col-md-12">
+        <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Lounge</th>
+        <th>Airport</th>
+        <th>Number of purchased by non-members</th>
+        <th>Number of member access</th>
+        <th>Revenue Generated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SATS Premier Lounge - Terminal 1</td>
+        <td>Singapore</td>
+        <td>3252</td>
+        <td>3252</td>
+        <td>£42953</td>
+      </tr>
+      <tr>
+        <td>SATS Premier Lounge- Terminal 3</td>
+        <td>Singapore</td>
+        <td>3200</td>
+        <td>3252</td>
+        <td>££32953</td>
+      </tr>
+      <tr>
+        <td>Aspire Lounge (No.26) - Main terminal</td>
+        <td>Amsterdam</td>
+        <td>2345</td>
+        <td>2345</td>
+        <td>££42923</td>
+      </tr>
+        <tr>
+        <td>Al Maha Transit Lounge – Terminal 1</td>
+        <td>Doha</td>
+        <td>2245</td>
+        <td>2245</td>
+        <td>££42874</td>
+      </tr>
+      <tr>
+        <td>Priority Lounge - Terminal 2</td>
+        <td>Frankfurt</td>
+        <td>1988</td>
+        <td>1988</td>
+        <td>££28405</td>
+      </tr>
+      <tr>
+        <td>Hong Kong Airlines - Club Autus – Midfield Course</td>
+        <td>Hong Kong</td>
+        <td>1267</td>
+        <td>1267</td>
+        <td>££12435</td>
+      </tr>
+        
+        
+        
+        
+        
+    </tbody>
+  </table>
+        
+
     </div>
-    <div class = "col-md-6">
-        <canvas id="myChart4"></canvas>
-    </div>
+    
 </div>
     
-    
+</div>
 
 
 
@@ -38,16 +107,16 @@
     let massPopCharts = new Chart(myChart, {
         type:'bar', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
-            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            labels:['August 2019', 'September 2019', 'October 2019', 'November 2019', 'December 2019', 'January 2020', 'February 2020', 'March 2020', 'April 2020', 'May 2020', 'June 2020', 'July 2020', 'August 2020'],
             datasets:[{
                 label: 'Population',
-                data:[694583,8399000,8982000,3769000,2148000],
-                //backgroundColor:'green',
-                backgroundColor:['green','blue','yellow','brown','pink'],
+                data:[100,123,123,125,128,129,123,123,125,128,129,125,128,129,128,129],
+                backgroundColor:'green',
+                //backgroundColor:['green','blue','yellow','brown','pink',],
                     }]
         },
         options:{
-            title:{display:true, text: 'Population of various cities',fontSize:25},
+            title:{display:true, text: 'The number of memberships sold plans sold each month in the last 12 months',fontSize:25},
             legend:{display:false}
         },
         
@@ -60,24 +129,85 @@
         let myChart1 = document.getElementById('myChart1').getContext('2d');
     
     let massPopCharts1 = new Chart(myChart1, {
-        type:'line', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        type:'bar', //different bar types includes bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
-            labels:['Boston','New York','London', 'Berlin', 'Paris'],
+            labels:['April 2020','May 2020','June 2020', 'July 2020', 'August 2020'],
             datasets:[{
-                label: 'Population',
-                data:[694583,8399000,8982000,3769000,2148000],
-                //backgroundColor:'green',
-                backgroundColor:['green','blue','yellow','brown','pink'],
-                    }]
+				label: '1 star ratings',
+				data: [
+					'23',
+					'23',
+					'20',
+					'23',
+					'28'
+				],
+                backgroundColor:'blue',
+			}, {
+				label: '2 star ratings',
+				data: [
+					'23',
+					'23',
+					'20',
+					'23',
+					'28'
+				],
+                backgroundColor:'green',
+			}, {
+				label: '3 star ratings',
+				data: [
+					'23',
+					'23',
+					'20',
+					'23',
+					'28'
+				],
+                backgroundColor:'orange',
+            }, {
+  				label: '4 star ratings',
+				data: [
+					'23',
+					'23',
+					'20',
+					'23',
+					'28'
+				],
+                backgroundColor:'yellow',              
+            }, {
+  				label: '5 star ratings',
+				data: [
+					'23',
+					'23',
+					'20',
+					'23',
+					'28'
+				],
+                backgroundColor:'brown',    
+                
+                }]
         },
         options:{
-            title:{display:true, text: 'Population of various cities',fontSize:25},
-            legend:{display:false}
+            title:{display:true, text: 'Total number of app rating by star level',fontSize:25},
+            legend:{display:true},
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+            }]
         },
-        
         layout:{ padding:{left:10}
             }
+        }
     });
+    
+    
+    
+    
+    
+    
+    
+    
     
 //chart 3
     let myChart3 = document.getElementById('myChart3').getContext('2d');
