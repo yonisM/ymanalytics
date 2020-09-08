@@ -3,6 +3,26 @@
 } 
 
 
+li > a {
+    color:grey
+}
+
+
+.nav-link {
+    display: block;
+    padding: 10px 70px;
+
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    border-color: white white;
+    border-bottom: 5px solid gray
+}
+
+.nav-tabs {
+    border-bottom:1px solid white
+}
+
 
 #wrapper {
     overflow-x: hidden;
