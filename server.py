@@ -1,12 +1,16 @@
 from flask import Flask, render_template, request
 from forms import SignUpForm
 from forms import LoginForm
+from search import search_string
+import pandas as pd
+import numpy as np
 import os
 
 app = Flask(__name__)
 
 
 
+#Randomly generate secret keys
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
@@ -16,22 +20,24 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     return render_template('index.html')
 
+
+#creates the search page 
+@app.route("/search", methods=['GET','POST'])
+def search():
     
-#Creates the about page
-@app.route("/about")
-def about():
-    return render_template('about.html', author='Yonis', sunny=False)
+    if request.method == 'POST':
+        display = 'block'
+        values = request.form['search']
+        shortened_list, count = search_string(values)
+        return render_template('search_data.html', shortened_list=shortened_list, count=count, display=display)
+    else:
+        display = "none"
+        return render_template('search_data.html', display=display)
+
+
+
+
     
-#creates the blog page 
-@app.route("/blog")
-def blog():
-    posts = [
-    {'title': "The book of worms", 'author': 'Yonis Mohamoud'}, 
-    {'title': "Harry Potter", 'author': 'J.K Rowley'},
-    {'title': "Secret tales", 'author': 'Perhaps Injay'}
-    ]
-    return render_template('blog.html', posts=posts)
-       
 #Creates a blog entry page
 @app.route("/blog/<blog_id>")
 def blogpost(blog_id):
@@ -40,7 +46,6 @@ def blogpost(blog_id):
     
 #Creates the sign up page
 @app.route('/signup', methods=['GET','POST'])
-
 def signup():
     form = SignUpForm()
     if form.is_submitted():

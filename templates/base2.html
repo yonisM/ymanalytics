@@ -30,9 +30,12 @@
     <div class="bg-dark border-right" id="sidebar-wrapper">
       <div class="sidebar-heading" style="color:white">YM Analytics </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-dark" style="color:white">Main Dashboard</a>
+        
+        <a href="{{ url_for('dashboard')}}" class="list-group-item list-group-item-action bg-dark" style="color:white">Main Dashboard</a>
+        <a href="{{ url_for('search')}}" class="list-group-item list-group-item-action bg-dark" style="color:white">Search through your data</a>
         <a href="#" class="list-group-item list-group-item-action bg-dark" style="color:white">View Reports</a>
         <a href="#" class="list-group-item list-group-item-action bg-dark" style="color:white">View the existing Alerts</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark" style="color:white">Connect datasources</a>
         <a href="#" class="list-group-item list-group-item-action bg-dark" style="color:white">Log out </a>
       </div>
     </div>

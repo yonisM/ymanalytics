@@ -1,0 +1,35 @@
+ {% extends "base2.html" %}   
+	
+	
+{% block content%}
+
+
+<div class = "container" style = "margin-top:30px; margin-bottom: 30px">
+    <h1 style="text-align:center; margin-bottom: 10px"> Search through your data </h1>
+    
+    
+    
+<form method="post">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name = "search" placeholder="Search">
+      <div class="input-group-append">
+        <button class="btn btn-danger" type="submit">Search</button>
+      </div>
+    </div>
+</form>
+    
+
+    
+<p style = "display: {{display}}"> {{ count }} rows has been returned </p>
+    
+{% for list in shortened_list  %}
+    
+    <p>{{ list }}</p>
+    
+{% endfor %}
+    
+    
+    
+    
+    
+{% endblock %}
