@@ -2,8 +2,6 @@ from flask import Flask, render_template, request
 from forms import SignUpForm
 from forms import LoginForm
 from search import search_string
-import pandas as pd
-import numpy as np
 import os
 
 app = Flask(__name__)
