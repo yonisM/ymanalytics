@@ -8,6 +8,20 @@
     <h1 style="text-align:center; margin-bottom: 10px"> Search through your data </h1>
     
     
+   
+    
+<div class = "float-left">
+    <button type = "button" class = "btn btn-link" data-toggle="modal" data-target="#Datasource"> Connect Datasource </button>
+</div>    
+    
+
+<div class = "float-right" style = "display: {{display}}">
+    
+    <button type = "button" class = "btn btn-link" data-toggle="modal" data-target="#exportFile"> Export results </button> <button class = "btn btn-link"> Turn results to table </button> <button class = "btn btn-link"> Save results </button>
+    
+</div>
+    
+    
     
 <form method="post">
     <div class="input-group mb-3">
@@ -27,6 +41,103 @@
     <p>{{ list }}</p>
     
 {% endfor %}
+    
+
+    
+    
+    
+<! -- Saved Datasources  --->     
+<div class="modal" tabindex="-1" id ="Datasource" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Saved Datasources</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form>
+      <div class="modal-body">
+
+#### List of data sources
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value = "Connect">
+      </div>
+    </form>
+    </div>
+  </div>
+</div>    
+<! -- End of Saved Datasources  --->     
+    
+    
+    
+    
+    
+    
+    
+<! -- Export data modal  --->     
+<div class="modal" tabindex="-1" id ="exportFile" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Export Results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form>
+      <div class="modal-body">
+
+  <div class="form-group">
+    <label for="filename">Name the file</label>
+    <input type="email" class="form-control" id="filename" aria-describedby="emailHelp" placeholder="Name the file">
+  </div>
+    
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="export" id="csv" value="option1" checked>
+  <label class="form-check-label" for="csv">
+    Export as CSV
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="export" id="text" value="option2">
+  <label class="form-check-label" for="text">
+    Export as Text
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="export" id="sql" value="option3">
+  <label class="form-check-label" for="sql">
+    Export as SQL file
+  </label>
+</div>
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value = "Download the file">
+      </div>
+    </form>
+    </div>
+  </div>
+</div>    
+<! -- End of Export data modal  ---> 
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
